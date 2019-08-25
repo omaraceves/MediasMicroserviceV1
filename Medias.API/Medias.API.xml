@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Medias.API</name>
+    </assembly>
+    <members>
+        <member name="M:Medias.API.Controllers.MediaCollectionsController.#ctor(Medias.API.DataServices.IMediasRepository,AutoMapper.IMapper)">
+            <summary>
+            ctor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Medias.API.Controllers.MediaCollectionsController.GetMediasCollection(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Get medias collection
+            </summary>
+            <param name="mediaIds">Returns a collection of medias for a given id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Medias.API.Controllers.MediasController.#ctor(Medias.API.DataServices.IMediasRepository,AutoMapper.IMapper)">
+            <summary>
+            ctor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Medias.API.Controllers.MediasController.GetMedias">
+            <summary>
+            Gets all medias
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Medias.API.Controllers.MediasController.GetMedia(System.String)">
+            <summary>
+            Gets a media
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
