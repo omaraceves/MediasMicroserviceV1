@@ -45,9 +45,9 @@ namespace Medias.API
 
             //Use SQL Server
             var connectionString = Configuration["ConnectionStrings:MediasDBConnectionString"];
-            services.AddDbContext<MediasContext>(o => o.UseSqlServer(connectionString));
-            services.AddScoped<IMediasRepository, MediasRepository>();
-
+            services.AddDbContext<MediasContext>(o => o.UseInMemoryDatabase("MediasDB"), ServiceLifetime.Singleton);
+            services.AddSingleton<IMediasRepository, MediasRepository>();
+           
             #region SWAGGER
 
             services.AddSwaggerGen(setupAction =>
@@ -103,6 +103,10 @@ namespace Medias.API
                 setupAction.DefaultModelExpandDepth(2);
                 setupAction.DefaultModelRendering(Swashbuckle.AspNetCore.SwaggerUI.ModelRendering.Model);
             });
+
+            //Initialize in memory DB
+            var repo = app.ApplicationServices.GetService<IMediasRepository>();
+            InMemoryDBInitializer.Initialize(repo);
         }
     }
 }

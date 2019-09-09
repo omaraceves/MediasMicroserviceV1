@@ -17,6 +17,20 @@ namespace Medias.API.DataServices
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
+        public MediaGroup AddMediaGroup(MediaGroup mediaGroupEntityToAdd)
+        {
+            _context.MediaGroups.Add(mediaGroupEntityToAdd);
+
+            return mediaGroupEntityToAdd;
+        }
+
+        public Media AddMedia(Media mediaEntityToAdd)
+        {
+            _context.Medias.Add(mediaEntityToAdd);
+
+            return mediaEntityToAdd;
+        }
+
         public async Task<Media> GetMediaAsync(Guid id)
         {
             return await _context.Medias.Include(x => x.MediaGroup)
@@ -31,6 +45,11 @@ namespace Medias.API.DataServices
         public async Task<IEnumerable<Media>> GetMediasAsync(IEnumerable<Guid> mediaIds)
         {
             return await _context.Medias.Include(x => x.MediaGroup).Where(m => mediaIds.Contains(m.Id)).ToListAsync() ?? null;
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
         }
     }
 }

@@ -10,11 +10,12 @@ namespace Medias.API.Context
     public class MediasContext : DbContext
     {
         public DbSet<Media> Medias { get; set; }
+        public DbSet<MediaGroup> MediaGroups { get; set; }
 
         public MediasContext(DbContextOptions<MediasContext> options)
            : base(options)
         {
-
+           
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

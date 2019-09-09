@@ -13,5 +13,11 @@ namespace Medias.API.DataServices
         Task<Media> GetMediaAsync(Guid id);
 
         Task<IEnumerable<Media>> GetMediasAsync(IEnumerable<Guid> mediaIds);
+
+        MediaGroup AddMediaGroup(MediaGroup mediaGroupEntityToAdd);
+
+        Media AddMedia(Media mediaEntityToAdd);
+
+        void SaveChanges();
     }
 }

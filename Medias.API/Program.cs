@@ -24,8 +24,8 @@ namespace Medias.API
             {
                 try
                 {
-                    var context = scope.ServiceProvider.GetService<MediasContext>();
-                    context.Database.Migrate();
+                    //var context = scope.ServiceProvider.GetService<MediasContext>();
+                    //context.Database.Migrate(); Uncomment to seed remote target DB
                 }
                 catch (Exception ex)
                 {

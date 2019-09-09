@@ -4,6 +4,17 @@
         <name>Medias.API</name>
     </assembly>
     <members>
+        <member name="T:Medias.API.Context.InMemoryDBInitializer">
+            <summary>
+            Seed medias into In Memory DB
+            </summary>
+        </member>
+        <member name="M:Medias.API.Context.InMemoryDBInitializer.Initialize(Medias.API.DataServices.IMediasRepository)">
+            <summary>
+            Initialize In memory DB
+            </summary>
+            <param name="context">Medias Context</param>
+        </member>
         <member name="M:Medias.API.Controllers.MediaCollectionsController.#ctor(Medias.API.DataServices.IMediasRepository,AutoMapper.IMapper)">
             <summary>
             ctor
